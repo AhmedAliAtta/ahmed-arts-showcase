@@ -1,14 +1,14 @@
-import { useTheme } from "next-themes";
-import { Toaster as Sonner, toast } from "sonner";
+// import { useTheme } from "next-themes"; // تم حذف هذا السطر
+import { Toaster as Sonner, toast } from "sonner"; // أبقينا على export لـ toast
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme();
+  // const { theme = "system" } = useTheme(); // تم حذف هذا السطر
 
   return (
     <Sonner
-      theme={theme as ToasterProps["theme"]}
+      // theme={theme as ToasterProps["theme"]} // تم حذف هذا السطر
       className="toaster group"
       toastOptions={{
         classNames: {
@@ -24,4 +24,5 @@ const Toaster = ({ ...props }: ToasterProps) => {
   );
 };
 
+// أبقينا على export لـ toast احتياطاً لو كان مستخدماً في مكان آخر
 export { Toaster, toast };
