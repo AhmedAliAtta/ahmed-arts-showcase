@@ -1,8 +1,13 @@
+import { useAuth } from '@/contexts/AuthContext';
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Settings } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
+  const { isAdmin } = useAuth();
+  const navigate = useNavigate();
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -17,6 +22,16 @@ const Hero = () => {
         backgroundAttachment: 'fixed'
       }}
     >
+      {isAdmin && (
+        <Button
+          className="absolute top-4 left-4 z-20"
+          onClick={() => navigate('/admin')}
+        >
+          <Settings className="w-4 h-4 ml-2" />
+          لوحة التحكم
+        </Button>
+      )}
+
       <div className="container mx-auto px-4 z-10">
         <div className="text-center space-y-6 animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">

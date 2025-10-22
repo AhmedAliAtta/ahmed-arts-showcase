@@ -1,7 +1,8 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Portfolio from "@/components/Portfolio";
+import DynamicPortfolio from "@/components/DynamicPortfolio";
 import Skills from "@/components/Skills";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -10,7 +11,8 @@ const Index = () => {
     <div className="min-h-screen">
       <Hero />
       <About />
-      <Portfolio />
+      <DynamicPortfolio />
+      <Testimonials />
       <Skills />
       <Contact />
       <Footer />
