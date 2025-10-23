@@ -1,15 +1,16 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc'; // للتأكد من دعم React
-import path from 'path'; // لاستخدام الـ alias
+import react from '@vitejs/plugin-react-swc';
+import path from 'path';
 
 export default defineConfig({
-  // base: './', // السطر القديم تم التعليق عليه
-  base: '/',   // السطر الجديد الصحيح
-  plugins: [react()], // الإضافة الخاصة بـ React
+  server: {
+    port: 8080
+  },
+  base: '/',
+  plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"), // مهم علشان الـ alias @ يشتغل
+      "@": path.resolve(__dirname, "./src"),
     },
   },
-  // other configurations... (أي إعدادات أخرى كانت موجودة تظل كما هي لو كانت تحت هذا السطر)
 });
